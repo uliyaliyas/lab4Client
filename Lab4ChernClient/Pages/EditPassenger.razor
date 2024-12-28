@@ -1,0 +1,52 @@
+﻿@page "/EditPassenger/{PassengerId:int}"
+
+@using Lab4ChernClient.DataAccess;
+@using Lab4ChernClient.DataAccess.Model;
+@inject NavigationManager NavigationManager
+<h3>EditPassenger</h3>
+<div class="row">
+    <EditForm Model="@passenger" OnValidSubmit="@EditButtonClick">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            Title: <InputText id="Name" @bind-Value="passenger.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            PhoneNumber: <InputText id="content" @bind-Value="passenger.PhoneNumber" class="form-control" />
+        </div>  
+        <div class="form-group">
+            Email: <InputText id="content" @bind-Value="passenger.Email" class="form-control" />
+        </div> 
+        <button type="submit" class="btn btn-success">Save</button>
+    </EditForm>
+</div>
+@code {
+    [Parameter]
+    public int? PassengerId { get; set; }
+    private Passenger passenger = new Passenger();
+    protected override async Task OnInitializedAsync()
+    {
+        string query = $"query{{passengerById(passengerId: {PassengerId}){{passengerId,name,dateBirth,passport,phoneNumber,email}}}}";
+        string graphQLQueryType = "passengerById";
+        var result = await Query.ExecuteQueryAsync<Passenger>(graphQLQueryType, query);
+        passenger = result;
+    }
+    private async Task EditButtonClick()
+    {
+        try
+        {
+            string query = $"mutation{{updatePassenger(model: {{Name: \"{passenger.Name}\",DateBirth: \"{passenger.DateBirth}\",Passport: \"{passenger.Passport}\",PhoneNumber: \"{passenger.PhoneNumber}\",Email: \"{passenger.Email}\",PassengerId:{PassengerId}}}){{passengerId,name,birthDate,passport,phoneNumber,email}}}}";
+            string querytype = "updatePassenger";
+            var result = await Query.ExecuteQueryAsync<Passenger>(querytype, query);
+            if (result != null)
+            {
+                NavigationManager.NavigateTo($"PassengerView");
+            }
+            passenger = result;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+}

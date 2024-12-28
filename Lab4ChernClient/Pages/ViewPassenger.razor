@@ -1,0 +1,48 @@
+﻿@page "/ViewPost/{PassengerId:int}"
+
+@using Lab4ChernClient.DataAccess;
+@using Lab4ChernClient.DataAccess.Model;
+@inject NavigationManager NavigationManager
+@if (passenger == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h3>@passenger.Name Details</h3>
+    <div>
+        <div>
+            Name:<span style="font-size:large">@passenger.Name</span>
+        </div>
+        <div>
+            DateBirth:<span style="font-size:large">@passenger.DateBirth</span>
+        </div>
+        <div>
+            Passport:<span style="font-size:large">@passenger.Passport</span>
+        </div>
+        <div>
+            PhoneNumber:<span style="font-size:large">@passenger.PhoneNumber</span>
+        </div>
+        <div>
+            Email:<span style="font-size:large">@passenger.Email</span>
+        </div>
+    </div>
+}
+<a href="/PassengerView">Back to List</a>
+@code {
+    [Parameter]
+    public int PassengerId { get; set; }
+
+    private Passenger passenger = new Passenger();
+    protected override async Task OnInitializedAsync()
+    {
+        string query = $"query{{passengerById(PassengerId: {PassengerId}){{passengerId,Name,dateBirth,passport,phoneNumber,email}}}}";
+        string graphQLQueryType = "postById";
+        var result = await Query.ExecuteQueryAsync<Passenger>(graphQLQueryType, query);
+        if (result == null)
+        {
+            NavigationManager.NavigateTo($"PostView");
+        }
+        passenger = result;
+    }
+}

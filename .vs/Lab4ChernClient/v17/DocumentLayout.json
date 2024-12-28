@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{754A086B-5FEE-43EF-8282-0B521C5DCFE0}|Lab4ChernClient\\Lab4ChernClient.csproj|c:\\users\\5090969\\source\\repos\\lab4chernclient\\lab4chernclient\\dataaccess\\model\\createpassengermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{754A086B-5FEE-43EF-8282-0B521C5DCFE0}|Lab4ChernClient\\Lab4ChernClient.csproj|solutionrelative:lab4chernclient\\dataaccess\\model\\createpassengermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{754A086B-5FEE-43EF-8282-0B521C5DCFE0}|Lab4ChernClient\\Lab4ChernClient.csproj|c:\\users\\5090969\\source\\repos\\lab4chernclient\\lab4chernclient\\pages\\createpassanger.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{754A086B-5FEE-43EF-8282-0B521C5DCFE0}|Lab4ChernClient\\Lab4ChernClient.csproj|solutionrelative:lab4chernclient\\pages\\createpassanger.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{754A086B-5FEE-43EF-8282-0B521C5DCFE0}|Lab4ChernClient\\Lab4ChernClient.csproj|c:\\users\\5090969\\source\\repos\\lab4chernclient\\lab4chernclient\\dataaccess\\model\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{754A086B-5FEE-43EF-8282-0B521C5DCFE0}|Lab4ChernClient\\Lab4ChernClient.csproj|solutionrelative:lab4chernclient\\dataaccess\\model\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreatePassanger.razor",
+              "DocumentMoniker": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\Lab4ChernClient\\Pages\\CreatePassanger.razor",
+              "RelativeDocumentMoniker": "Lab4ChernClient\\Pages\\CreatePassanger.razor",
+              "ToolTip": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\Lab4ChernClient\\Pages\\CreatePassanger.razor",
+              "RelativeToolTip": "Lab4ChernClient\\Pages\\CreatePassanger.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-27T13:41:29.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Flight.cs",
+              "DocumentMoniker": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\Lab4ChernClient\\DataAccess\\Model\\Flight.cs",
+              "RelativeDocumentMoniker": "Lab4ChernClient\\DataAccess\\Model\\Flight.cs",
+              "ToolTip": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\Lab4ChernClient\\DataAccess\\Model\\Flight.cs",
+              "RelativeToolTip": "Lab4ChernClient\\DataAccess\\Model\\Flight.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T13:40:19.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreatePassengerModel.cs",
+              "DocumentMoniker": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\Lab4ChernClient\\DataAccess\\Model\\CreatePassengerModel.cs",
+              "RelativeDocumentMoniker": "Lab4ChernClient\\DataAccess\\Model\\CreatePassengerModel.cs",
+              "ToolTip": "C:\\Users\\5090969\\source\\repos\\Lab4ChernClient\\Lab4ChernClient\\DataAccess\\Model\\CreatePassengerModel.cs",
+              "RelativeToolTip": "Lab4ChernClient\\DataAccess\\Model\\CreatePassengerModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T13:38:57.24Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+﻿@page "/PassengerView"
+@using Lab4ChernClient.DataAccess
+@using Lab4ChernClient.DataAccess.Model;
+@inject NavigationManager NavigationManager;
+<h3>All Passenger</h3>
+<a href="/CreatePassanger">Create passenger</a>
+@if (AllPassengers.Count == 0)
+{
+    <p><em>Loading ...</em></p>
+}
+else{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DateBirth</th>
+                <th>Passport</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var passenger in AllPassengers)
+            {
+                <tr>
+                    <td><a href="/ViewPassenger/@passenger.PassengerId">@passenger.Name</a></td>
+                    <td>@passenger.DateBirth</td>
+                    <td>@passenger.Passport</td>
+                    <td>@passenger.PhoneNumber</td>
+                    <td>@passenger.Email</td>
+                    <td>
+                        <a class="btn btn-primary" href="/EditPassenger/@passenger.PassengerId">Изменить</a>
+                        <a class="btn btn-primary" @onclick="@(async ()=>await Delete(passenger.PassengerId))">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Passenger> AllPassengers = new List<Passenger>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Load();
+    }
+    private async Task Delete(int? passengerId)
+    {
+        string query = @"mutation{deletePassenger(PassengerId:" + passengerId + ")}";
+        string queryType = "deletePassenger";
+        await Query.ExecuteQueryAsync<bool>(queryType, query);
+        await Load();
+    }
+    private async Task Load()
+    {
+        try
+        {
+            string query = "query{passengers{passengerId,Name,dateBirth,passport,phoneNumber,email}}";
+            string queryType = "passengers";
+            var result = await Query.
+            ExecuteQueryReturnListAsync<Passenger>(queryType, query);
+            AllPassengers = result;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+}
